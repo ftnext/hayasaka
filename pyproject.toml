@@ -1,0 +1,34 @@
+[project]
+name = "hayasaka"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT License" }
+classifiers = ["Development Status :: 3 - Alpha"]
+dependencies = ["helium==3.0.7"]
+
+[project.optional-dependencies]
+dev = [
+    "taskipy",
+    "autoflake",
+    "pyupgrade",
+    "black",
+    "isort",
+    "pytest",
+    "pytest-randomly",
+    "flake8",
+    "mypy",
+]
+
+[tool.taskipy.tasks]
+pre_test = "task format"
+test = "pytest -v"
+post_test = "task check"
+format = "task format_autoflake && task format_pyupgrade && task format_black && task format_isort"
+format_autoflake = "autoflake --in-place --remove-all-unused-imports $(find hayasaka tests -name '*.py') setup.py"
+format_pyupgrade = "pyupgrade $(find hayasaka tests -name '*.py') setup.py"
+format_black = "black -l 79 hayasaka tests setup.py"
+format_isort = "isort --profile black -l 79 hayasaka tests setup.py"
+check = "task check_flake8 && task check_mypy"
+check_flake8 = "flake8 hayasaka tests"
+check_mypy = "mypy hayasaka tests"
