@@ -7,6 +7,9 @@ license = { text = "MIT License" }
 classifiers = ["Development Status :: 3 - Alpha"]
 dependencies = ["helium==3.0.7"]
 
+[project.scripts]
+hayasaka-cli = "hayasaka.__main__:main"
+
 [project.optional-dependencies]
 dev = [
     "taskipy",
