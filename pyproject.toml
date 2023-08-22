@@ -5,7 +5,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT License" }
 classifiers = ["Development Status :: 3 - Alpha"]
-dependencies = ["helium==3.0.7"]
+dependencies = ["helium==3.0.7", "urllib3<2"]
 
 [project.scripts]
 hayasaka-cli = "hayasaka.__main__:main"
