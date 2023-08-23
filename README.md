@@ -22,11 +22,10 @@ $ pip install hayasaka
 $ hayasaka-cli https://ftnext.github.io/2022_slides/pyconjp/python_and_star.html python_and_star.png
 ```
 
-📸Generate an image from a local HTML file (Specify `file://` scheme)
-
+📸Generate an image from a local HTML file path
 
 ```sh
-$ hayasaka-cli file:///Users/ftnext/.../2022_slides/build/revealjs/pyconjp/python_and_star.html python_and_star.png
+$ hayasaka-cli ../2022_slides/build/revealjs/pyconjp/python_and_star.html python_and_star.png
 ```
 
 ## Development environment
