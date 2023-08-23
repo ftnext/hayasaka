@@ -1,11 +1,27 @@
 [project]
 name = "hayasaka"
 version = "0.1.0"
+description = "Hayasaka saves the rendered HTML as an image."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT License" }
-classifiers = ["Development Status :: 3 - Alpha"]
+authors = [{ name = "nikkie", email = "takuyafjp+develop@gmail.com" }]
+keywords = ["image", "HTML", "browser", "render", "screenshot"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
 dependencies = ["helium<3.1", "urllib3<2"]
+
+[project.urls]
+Repository = "https://github.com/ftnext/hayasaka"
 
 [project.scripts]
 hayasaka-cli = "hayasaka.__main__:main"
