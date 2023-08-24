@@ -21,7 +21,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-dependencies = ["helium<3.1", "urllib3<2"]
+dependencies = ["helium<3.3"]
 dynamic = ["version"]
 
 [project.urls]
