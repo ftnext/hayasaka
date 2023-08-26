@@ -11,6 +11,19 @@ else:
     from collections.abc import Iterable
 
 
+def test_build_options():
+    actual = core.build_options()
+
+    assert_options_arguments(actual, {"--width=800", "--height=485"})
+
+
+def assert_options_arguments(
+    option, expected_arguments: Iterable[str]
+) -> None:
+    assert isinstance(option, FirefoxOptions)
+    assert set(option.arguments) == set(expected_arguments)
+
+
 @patch("hayasaka.core.kill_browser")
 @patch("hayasaka.core.get_driver")
 @patch("hayasaka.core.go_to")
@@ -29,16 +42,3 @@ def test_take_screenshot(start_firefox, go_to, get_driver, kill_browser):
     get_driver.assert_called_once_with()
     driver.save_screenshot.assert_called_once_with("save/to/path.png")
     kill_browser.assert_called_once_with()
-
-
-def test_build_options():
-    actual = core.build_options()
-
-    assert_options_arguments(actual, {"--width=800", "--height=485"})
-
-
-def assert_options_arguments(
-    option, expected_arguments: Iterable[str]
-) -> None:
-    assert isinstance(option, FirefoxOptions)
-    assert set(option.arguments) == set(expected_arguments)
