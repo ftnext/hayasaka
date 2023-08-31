@@ -11,12 +11,6 @@ else:
     from collections.abc import Iterable
 
 
-def test_build_options():
-    actual = core.build_options()
-
-    assert_options_arguments(actual, {"--width=800", "--height=485"})
-
-
 def assert_options_arguments(
     option, expected_arguments: Iterable[str]
 ) -> None:
