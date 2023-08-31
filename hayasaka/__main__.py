@@ -1,5 +1,5 @@
 from hayasaka.cli import parse_args
-from hayasaka.core import take_screenshot
+from hayasaka.firefox import take_screenshot
 
 
 def main():
