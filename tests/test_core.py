@@ -1,21 +1,6 @@
-import sys
 from unittest.mock import patch
 
-from selenium.webdriver import FirefoxOptions
-
 from hayasaka import core
-
-if sys.version_info < (3, 9):
-    from typing import Iterable
-else:
-    from collections.abc import Iterable
-
-
-def assert_options_arguments(
-    option, expected_arguments: Iterable[str]
-) -> None:
-    assert isinstance(option, FirefoxOptions)
-    assert set(option.arguments) == set(expected_arguments)
 
 
 @patch("hayasaka.core.kill_browser")
