@@ -1,21 +1,13 @@
-import sys
 from unittest.mock import ANY, patch
 
 from selenium.webdriver import FirefoxOptions
 
 from hayasaka import firefox
 
-if sys.version_info < (3, 9):
-    from typing import Iterable
-else:
-    from collections.abc import Iterable
 
-
-def assert_options_arguments(
-    option, expected_arguments: Iterable[str]
-) -> None:
+def assert_options_arguments(option, expected_arguments: set[str]) -> None:
     assert isinstance(option, FirefoxOptions)
-    assert set(option.arguments) == set(expected_arguments)
+    assert set(option.arguments) == expected_arguments
 
 
 def test_build_options():
